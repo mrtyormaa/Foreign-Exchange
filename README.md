@@ -1,14 +1,14 @@
 # Foreign-Exchange
 
 ## This program has the option of setting the following:
-1. offset 
-2. Interval Duration
+1. Offset - Offset length of the labels [variable: offset]
+2. Interval Duration [variable: duration]
       a. m - Minute
       b. h - Hour
       c. d - Day
       d. o - mOnth
       e. y - Year
-3. folder path
+3. folder path [variable: testDir]
       - the program recursively looks through the folder and subfolders to find all the CSV files and creates a corresponding file with "-dataprep.csv" suffix to store the processed data.
 
 Change the above parameters in "Main.java" to get the desired result.
