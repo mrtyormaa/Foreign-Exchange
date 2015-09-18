@@ -13,11 +13,6 @@
 
 Change the above parameters in "Main.java" to get the desired result.
 
-To be implemented
-  - the features are limited to one file. This will be changed in the future version to include features from other files.
-  - time alignment
-  - command line arguement passing.
-
 ## File Structure 
 - src
   - Main.java [Run the Main file to run the program.]
@@ -30,3 +25,8 @@ To be implemented
     - Queue.java [ Custom Linked List data structure]
     - RawData.java [Just raw data]
     - WriteData.java [Writes data to appropriate file]
+
+# To be implemented
+  - the features are limited to one file. This will be changed in the future version to include features from other files.
+  - time alignment
+  - command line arguement passing.
