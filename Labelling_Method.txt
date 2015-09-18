@@ -3,29 +3,41 @@ I have created 9 features and 2 labels.
 - Features -
 The features are as follows:
 1. Minimum of Bid (in a chosen time interval)
-2. Maximum of Bid
-3. Minimm of Ask
+2. Minimm of Ask 
+3. Minimum Bid-Ask Spread
+4. Maximum of Bid
 4. Maximum of Ask
-5. Minimum Bid-Ask Spread
 6. Maximum Bid-Ask process
 7. Mean/Average of the Bid
 8. Mean/Average of the Ask
-9. Min/Average of the Bid-Ask Spread
+9. Mean/Average of the Bid-Ask Spread
 
 - Labels - 
 I have two labels.
 1. Directionality of the Ask price. (as 0 or 1)
 2. Directionality of the Bid price. (as 0 or 1)
 
+
+Sample Output :
+----------------------------------------------------------------------------------------------
+AUD/JPY,97.631,97.848,0.0079956055,97.937,98.028,0.33200073,97.870514,97.92934,0.05882074,1,1
+AUD/JPY,97.853,97.894,0.007003784,98.093,98.133,0.06300354,97.94828,97.9914,0.043122843,0,1
+AUD/JPY,97.814,97.838,0.0019989014,98.09,98.107,0.034996033,97.946815,97.96561,0.018799331,0,0
+AUD/JPY,97.813,97.832,0.0019989014,97.902,97.92,0.022003174,97.85005,97.8665,0.016454546,1,1
+----------------------------------------------------------------------------------------------
+
 Few things - 
 Time Interval:
  - Trying to process the data on the tick level will be very difficult, because it will have a lot of noise.
- - Hence, I am implementing the time interval feature which will calculate the features over 1 Minute, 1 Hour, 1 Day, and 1 Month. (Only minute has been implemented so far.)
-
+ - Hence, I am implementing the time interval feature which will calculate the features over 1 Minute, 1 Hour, 1 Day, and 1 Month.
 
 Feature Selection:
 Intuitively, it seems that if we see the Minimum, Maximum and the average of Ask, Bid and the Ask-Bid Spread, we can pedict the future direction of both Ask and Bid. 
 The market always depends on it's closing state on the previous day and carries on from where it had left. So, we can see a direct correlation of these features with the labels.
+Also other features to be implented are as follows: (not implemnted now cause of time constraints)
+1. Change in Ask-Bid spread of 4 other common currencies. 2 of each currency under consideration.
+2. Minimum of those other currencies
+3. Maximum of those other currencies
 
 Labels:
 These two labels are very intuitive. We are seeing if the value of Bid and Ask are increasing or decreasing in the next interval.
