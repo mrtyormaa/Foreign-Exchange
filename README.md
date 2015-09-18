@@ -20,7 +20,7 @@ To be implemented
 
 ## File Structure 
 - src
-  - Main,java [Run the Main file to run the program.]
+  - Main.java [Run the Main file to run the program.]
   - data.prep
     - Calculations.java [This class has all the calculations on the raw data e.g. min, max, median ask-bid spread]
     - DateTime.java [This is a custom Date and Time class]
@@ -30,5 +30,3 @@ To be implemented
     - Queue.java [ Custom Linked List data structure]
     - RawData.java [Just raw data]
     - WriteData.java [Writes data to appropriate file]
-    - 
-
