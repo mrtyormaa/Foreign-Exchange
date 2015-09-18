@@ -1,0 +1,33 @@
+I have created 9 features and 2 labels.
+
+- Features -
+The features are as follows:
+1. Minimum of Bid (in a chosen time interval)
+2. Maximum of Bid
+3. Minimm of Ask
+4. Maximum of Ask
+5. Minimum Bid-Ask Spread
+6. Maximum Bid-Ask process
+7. Mean/Average of the Bid
+8. Mean/Average of the Ask
+9. Min/Average of the Bid-Ask Spread
+
+- Labels - 
+I have two labels.
+1. Directionality of the Ask price. (as 0 or 1)
+2. Directionality of the Bid price. (as 0 or 1)
+
+Few things - 
+Time Interval:
+ - Trying to process the data on the tick level will be very difficult, because it will have a lot of noise.
+ - Hence, I am implementing the time interval feature which will calculate the features over 1 Minute, 1 Hour, 1 Day, and 1 Month. (Only minute has been implemented so far.)
+
+
+Feature Selection:
+Intuitively, it seems that if we see the Minimum, Maximum and the average of Ask, Bid and the Ask-Bid Spread, we can pedict the future direction of both Ask and Bid. 
+The market always depends on it's closing state on the previous day and carries on from where it had left. So, we can see a direct correlation of these features with the labels.
+
+Labels:
+These two labels are very intuitive. We are seeing if the value of Bid and Ask are increasing or decreasing in the next interval.
+An increase is denoted by 1. and a decrease is denoted by 0.
+This sort denoting the label helps us to filter out a lot of information and helps us to focus on one particular metric. And binary data is easier to deal with.
