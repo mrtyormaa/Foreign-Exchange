@@ -1,2 +1,6 @@
 *.csv
 *.zip
+*.iml
+*.class
+.idea/
+out/
