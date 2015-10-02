@@ -38,7 +38,7 @@ I have tested the data for duration 2010-2015 and currency "AUD-JPY"
 ###Improvements:
 - Need to improve the discretization process.
     - Presently, it is hardcoded. I am planning to implement K-Means Discretization. This should be fairly easy due to the present architecture.
-    - The predictions are printed to the console and are not being written to an output file. It is a small task and will be completed for homework 6.
+- The predictions are printed to the console and are not being written to an output file. It is a small task and will be completed for homework 6.
 
 The algorithm has been based on the following open source project. Appropriate changes and modifications have been made to cater to this homework
 
