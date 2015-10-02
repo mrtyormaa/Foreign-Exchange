@@ -7,13 +7,13 @@ package decisiontree;
 import java.util.*;
 
 
-class Examples {
-  class Example {
+class Records {
+  class Record {
     private Map<String, String> values;
     private boolean classifier;
   
-    public Example(String[] attributeNames, String[] attributeValues,
-                   boolean classifier) {
+    public Record(String[] attributeNames, String[] attributeValues,
+                  boolean classifier) {
       assert(attributeNames.length == attributeValues.length);
       values = new HashMap<String, String>();
 
@@ -24,7 +24,7 @@ class Examples {
       this.classifier = classifier;
     }
 
-    public Example(Map<String, String> attributes, boolean classifier) {
+    public Record(Map<String, String> attributes, boolean classifier) {
       this.classifier = classifier;
       this.values = attributes;
     }
@@ -42,29 +42,29 @@ class Examples {
     }
   }
 
-  private List<Example> examples;
+  private List<Record> records;
 
-  public Examples() {
-    examples = new LinkedList<Example>();
+  public Records() {
+    records = new LinkedList<Record>();
   }
   
   public void add(String[] attributeNames, String[] attributeValues,
                   boolean classifier) {
-    examples.add(new Example(attributeNames, attributeValues, classifier));
+    records.add(new Record(attributeNames, attributeValues, classifier));
   }
 
   public void add(Map<String, String> attributes, boolean classifier) {
-    examples.add(new Example(attributes, classifier));
+    records.add(new Record(attributes, classifier));
   }
 
   /**
-   * Returns the number of examples where the attribute has the specified
+   * Returns the number of records where the attribute has the specified
    * 'decision' value
    */
   int countDecisions(String attribute, String decision) {
     int count = 0;
 
-    for ( Example e : examples ) {
+    for ( Record e : records) {
       if ( e.getAttributeValue(attribute).equals(decision) )
         count++;
     }
@@ -74,7 +74,7 @@ class Examples {
 
   /**
    * Returns a map from each attribute name to a set of all values used in the
-   * examples for that attribute.
+   * records for that attribute.
    */
   public Map<String, Set<String> > extractDecisions() {
     Map<String, Set<String> > decisions = new HashMap<String, Set<String> >();
@@ -115,7 +115,7 @@ class Examples {
     int count = 0;
 
 nextExample:
-    for ( Example e : examples ) {
+    for ( Record e : records) {
       for ( Map.Entry<String, String> attribute : attributes.entrySet() )
         if ( !(e.getAttributeValue(attribute.getKey()).equals(attribute.getValue())) )
           continue nextExample;
@@ -131,7 +131,7 @@ nextExample:
     int count = 0;
 
 nextExample:
-    for ( Example e : examples ) {
+    for ( Record e : records) {
       for ( Map.Entry<String, String> attribute : attributes.entrySet() )
         if ( !(e.getAttributeValue(attribute.getKey()).equals(attribute.getValue())) )
           continue nextExample;
@@ -154,19 +154,19 @@ nextExample:
   }
   
   /**
-   * Returns the number of examples.
+   * Returns the number of records.
    */
   public int count() {
-    return examples.size();
+    return records.size();
   }
 
   /**
-   * Returns a set of attribute names used in the examples.
+   * Returns a set of attribute names used in the records.
    */
   public Set<String> extractAttributes() {
     Set<String> attributes = new HashSet<String>();
 
-    for ( Example e : examples ) {
+    for ( Record e : records) {
       attributes.addAll(e.getAttributes());
     }
 
@@ -176,7 +176,7 @@ nextExample:
   private Set<String> extractDecisions(String attribute) {
     Set<String> decisions = new HashSet<String>();
 
-    for ( Example e : examples ) {
+    for ( Record e : records) {
       decisions.add(e.getAttributeValue(attribute));
     }
 

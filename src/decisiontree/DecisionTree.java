@@ -19,12 +19,12 @@ public class DecisionTree {
   private boolean decisionsSpecified;
 
   /**
-   * Contains the examples to be processed into a decision tree.
+   * Contains the records to be processed into a decision tree.
    *
    * The 'attributes' and 'decisions' member variables should be updated
-   * prior to adding examples that refer to new attributes or decisions.
+   * prior to adding records that refer to new attributes or decisions.
    */
-  private Examples examples;
+  private Records records;
 
   /**
    * Indicates if the provided data has been processed into a decision tree.
@@ -47,7 +47,7 @@ public class DecisionTree {
 
   public DecisionTree() {
     algorithm = null;
-    examples = new Examples();
+    records = new Records();
     attributes = new LinkedHashSet<String>();
     decisions = new HashMap<String, Set<String> >();
     decisionsSpecified = false;
@@ -55,7 +55,7 @@ public class DecisionTree {
 
   private void setDefaultAlgorithm() {
     if ( algorithm == null )
-      setAlgorithm(new ID3Algorithm(examples));
+      setAlgorithm(new ID3Algorithm(records));
   }
 
   public void setAlgorithm(Algorithm algorithm) {
@@ -65,7 +65,7 @@ public class DecisionTree {
   /**
    * Saves the array of attribute names in an insertion ordered set.
    *
-   * The ordering of attribute names is used when addExamples is called to
+   * The ordering of attribute names is used when addRecords is called to
    * determine which values correspond with which names.
    *
    */
@@ -105,7 +105,7 @@ public class DecisionTree {
 
   /**
    */
-  public DecisionTree addExample(String[] attributeValues, boolean classification) throws UnknownDecisionException {
+  public DecisionTree addRecord(String[] attributeValues, boolean classification) throws UnknownDecisionException {
     String[] attributes = this.attributes.toArray(new String[0]);
 
     if ( decisionsSpecified )
@@ -116,15 +116,15 @@ public class DecisionTree {
 
     compiled = false;
 
-    examples.add(attributes, attributeValues, classification);
+    records.add(attributes, attributeValues, classification);
     
     return this;
   }
 
-  public DecisionTree addExample(Map<String, String> attributes, boolean classification) throws UnknownDecisionException {
+  public DecisionTree addRecord(Map<String, String> attributes, boolean classification) throws UnknownDecisionException {
     compiled = false;
 
-    examples.add(attributes, classification);
+    records.add(attributes, classification);
 
     return this;
   }
@@ -176,7 +176,7 @@ public class DecisionTree {
     Set<String> usedAttributes = new HashSet<String>();
 
     if ( !decisionsSpecified )
-      decisions = examples.extractDecisions();
+      decisions = records.extractDecisions();
 
     // find the root attribute (either leaf or non)
     // walk the tree, adding attributes as needed under each decision
