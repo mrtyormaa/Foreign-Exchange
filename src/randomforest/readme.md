@@ -13,6 +13,8 @@ The output can be verified in the console. I have used logger to display all cal
 
 
 ###Random Forest Properties
+There are total of 9 features. I am selecting 3 features at random for each decision tree.
+
 The forest properties can be changed as per requirement.
 The default values are as below:
  - totalFeatures = 9; // This part is hardcoded. This should not be changed. This is the total number of available fetures.
