@@ -6,8 +6,8 @@ Most of the changes have been done in the Decision Tree package. The main releva
 are in the CreateDT class.
 
 ###Statistics
-Decision tree Efficiency : 50.808%
-Random Forest Efficiency : 53.6732%
+- Decision tree Efficiency : 50.808%
+- Random Forest Efficiency : 53.6732%
 
 The output dump can be found in the log file.
 
