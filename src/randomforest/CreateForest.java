@@ -12,7 +12,7 @@ public class CreateForest {
     public static void main(String[] args) {
         int totalFeatures = 9;
         int numberOfFeaturesPerDT = 3;
-        int numberOfTrees = 3;
+        int numberOfTrees = 500;
         ArrayList<DecisionTree> randomForest = new ArrayList<>();
         ArrayList<int[]> allDTFeatures = new ArrayList<>();
         for (int i = 0; i < numberOfTrees; i++) {
