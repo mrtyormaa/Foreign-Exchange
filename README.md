@@ -1,6 +1,11 @@
 # Foreign-Exchange
 
 ##HomeWork 2
+Homework 3 details can be found in the Readme file inside src/randomforest
+
+There are a few code in src\decisiontree too.
+
+##HomeWork 2
 Homework 2 details can be found in the Readme file inside src/decisiontree
 
 ## This program has the option of setting the following:
