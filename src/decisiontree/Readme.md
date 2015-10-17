@@ -29,12 +29,18 @@ These two things have been implemented as an interface so that they can be chang
 ###Program Flow:
 - The prepped data is read.
 - Continuous data is changed to discrete values.
-- Decision Tree Training: Records are added to the decision tree.
-- Prediction: When the tree is ready, the data is fed into the tree to check prediction.
+- Decision Tree Training: Records are added to the decision tree. [ trainData() ]
+- Prediction: When the tree is ready, the data is fed into the tree to check prediction. [ predictData() ]
 
 ###Test Cases:
 I have tested the data for duration 2010-2015 and currency "AUD-JPY"
 
+###Improvements:
+- Need to improve the discretization process.
+    - Presently, it is hardcoded. I am planning to implement K-Means Discretization. This should be fairly easy due to the present architecture.
+- The predictions are printed to the console and are not being written to an output file. It is a small task and will be completed for homework 3.
+
 The algorithm has been based on the following open source project. Appropriate changes and modifications have been made to cater to this homework
 
 https://github.com/saebyn/java-decision-tree
+

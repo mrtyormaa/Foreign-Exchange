@@ -1,5 +1,8 @@
 # Foreign-Exchange
 
+##HomeWork 2
+Homework 2 details can be found in the Readme file inside src/decisiontree
+
 ## This program has the option of setting the following:
 1. Offset - Offset length of the labels [variable: offset]
 2. Interval Duration [variable: duration]
