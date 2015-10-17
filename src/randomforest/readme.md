@@ -1,6 +1,15 @@
 ##HomeWork 3
+Due to the object oriented design of the Decison Tree, the implementation of the Random Forest is very simple.
+Very few changes were required to get the implementation of the desired random forest.
+
 Most of the changes have been done in the Decision Tree package. The main relevant changes
 are in the CreateDT class.
+
+###Statistics
+Decision tree Efficiency : 50.808%
+Random Forest Efficiency : 53.6732%
+
+The output dump can be found in the log file.
 
 ###Random Forest Properties
 The forest properties can be changed as per requirement.
