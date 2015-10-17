@@ -9,7 +9,8 @@ are in the CreateDT class.
 - Decision tree Efficiency : 50.808%
 - Random Forest Efficiency : 53.6732%
 
-The output dump can be found in the log file.
+The output can be verified in the console. I have used logger to display all calculations i.e information gain, entropy, fetaures selected etc... 
+
 
 ###Random Forest Properties
 The forest properties can be changed as per requirement.
