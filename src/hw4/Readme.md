@@ -1,6 +1,50 @@
 ##HomeWork 4
+
+Creating the Cassandra Database and tables were done by the following commands
+```
+CREATE KEYSPACE bigdata WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE TABLE trainingdata (
+           datetime text,
+           minbid text,
+           minask text,
+           mindelta text,
+           maxbid text,
+           maxask text,
+           maxdelta text,
+           meanbid text,
+           meanask text,
+           meandelta text,
+           askrirectionality text,
+           biddirectionality text,
+           primary key (datetime));
+
+CREATE TABLE testdata (
+           datetime text,
+           minbid text,
+           minask text,
+           mindelta text,
+           maxbid text,
+           maxask text,
+           maxdelta text,
+           meanbid text,
+           meanask text,
+           meandelta text,
+           askrirectionality text,
+           primary key (datetime));
+```
+
+Data was populated using the following files.
+ - CreateTestDataInCassandra : Populate test Data
+ - 
 The change from reading from files to reading from Cassandra database was pretty simple.
 There were a few changes in the files
+ - decisiontree.CreateDT
+  - Added two new functions 
+   - *getCassandraDT* : this is used in place of the existing funtion *getDT*
+   - *trainCassandraData* : this is used in place of the existing funtion *trainData*
+ - decisiontree.BinaryDiscretization
+  - New *constructor* to read from Cassandra instead of files.
 
 ###Statistics
 - Decision tree Efficiency : 50.808%
