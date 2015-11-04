@@ -1,0 +1,1 @@
+COPY bigdata.testdata (datetime, minbid, minask, mindelta, maxbid, maxask, maxdelta, meanbid, meanask, meandelta, askrirectionality, biddirectionality) FROM '/Users/mrtyormaa/Downloads/test/test/AUDJPY-2015-01-predict.csv';

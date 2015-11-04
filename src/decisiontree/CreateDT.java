@@ -1,5 +1,10 @@
 package decisiontree;// Created by mrtyormaa on 10/1/15.
 
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ResultSet;
+import com.datastax.driver.core.Row;
+import com.datastax.driver.core.Session;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +12,57 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateDT {
+
+    public static DecisionTree getCassandraDT(int[] features){
+        System.out.println("Creating DecisionTree");
+
+        //Discretize data based on the first file - Mean of the values
+        BinaryDiscretization bd = new BinaryDiscretization();
+
+        System.out.println("Training Datasets...");
+        DecisionTree decisionTree = trainCassandraData(bd, features);
+        System.out.println("Training Complete...");
+        return decisionTree;
+    }
+
+    private static DecisionTree trainCassandraData(BinaryDiscretization bd, int[] features) {
+        Cluster cluster;
+        Session session;
+
+        // Connect to the cluster and keyspace "demo"
+        System.out.println("Connecting to Cassandra...");
+        cluster = Cluster.builder().addContactPoint("127.0.0.1").build();
+        session = cluster.connect("bigdata");
+
+        System.out.println("Readind data from Cassandra...");
+        ResultSet results = session.execute("SELECT * FROM trainingdata");
+        String[] allAttributes = new String[]{"minbid", "minask", "mindelta", "maxbid", "maxask", "maxdelta", "meanbid", "meanask", "meandelta"};
+        String[] data = new String[11];
+
+        DecisionTree decisionTree = new DecisionTree();
+        decisionTree.setAttributes(allAttributes);
+        for (Row row : results) {
+            for (int i = 0; i < 10; i++) {
+                data[i] = row.getString(allAttributes[i]);
+            }
+            data[10] = row.getString("askrirectionality");
+            Map<String, String> record = formatRecord(data, bd, features);
+
+            try {
+                decisionTree.addRecord(record, data[10].equalsIgnoreCase("1"));
+            } catch (UnknownDecisionException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Clean up the connection by closing it
+        cluster.close();
+
+        decisionTree.compile();
+
+        return decisionTree; //to shut up compiler
+    }
+
 
     public static DecisionTree getDT(int[] features){
         System.out.println("Creating DecisionTree");
