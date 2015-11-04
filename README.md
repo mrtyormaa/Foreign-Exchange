@@ -1,6 +1,9 @@
 # Foreign-Exchange
 
-##HomeWork 2
+##HomeWork 4
+Homework 4 details can be found inside hw4 folder in src. Please refer to the readme file inside that folder for further information.
+
+##HomeWork 3
 Homework 3 details can be found in the Readme file inside src/randomforest
 
 There are a few code in src\decisiontree too.
