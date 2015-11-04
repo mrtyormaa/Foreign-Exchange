@@ -35,8 +35,12 @@ CREATE TABLE testdata (
 ```
 
 Data was populated using the following files.
- - CreateTestDataInCassandra : Populate test Data
- - 
+ - **CreateTrainingDatainCassandra** : Populates the training data.
+ - **CreateTestDataInCassandra** : Populates test Data.
+
+The main execution is done from 
+ - **CreateForestUsingCassandra** : It is similar to the previous assignment. Only minor changes have been made to replace reading from files to reading from localhost Cassandra database.
+
 The change from reading from files to reading from Cassandra database was pretty simple.
 There were a few changes in the files
  - decisiontree.CreateDT
