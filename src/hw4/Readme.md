@@ -45,10 +45,10 @@ The main execution is done from
 
 The change from reading from files to reading from Cassandra database was pretty simple.
 There were a few changes in the files
- - decisiontree.CreateDT: Added two new functions 
+ - **decisiontree.CreateDT** : Added two new functions 
    - *getCassandraDT* : this is used in place of the existing funtion *getDT*
    - *trainCassandraData* : this is used in place of the existing funtion *trainData*
- - decisiontree.BinaryDiscretization
+ - **decisiontree.BinaryDiscretization**
   - New *constructor* to read from Cassandra instead of files.
 
 ###Statistics
