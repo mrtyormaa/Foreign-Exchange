@@ -36,9 +36,9 @@ CREATE TABLE testdata (
 
 Data was populated using the following files.
  - **CreateTrainingDatainCassandra** : Populates the training data.
-           - Creates queries.txt dynamically to execute the *queries.txt* in bash.
+           - Creates *queries.txt* dynamically to execute the shell commands in bash.
  - **CreateTestDataInCassandra** : Populates test Data.
-           - Creates queries.txt dynamically to execute the *testqueries.txt* in bash.
+           - Creates *testqueries.txt* dynamically to execute the shell commands in bash.
 
 The main execution is done from 
  - **CreateForestUsingCassandra** : It is similar to the previous assignment. Only minor changes have been made to replace reading from files to reading from localhost Cassandra database.
