@@ -1,5 +1,8 @@
 # Foreign-Exchange
 
+##HomeWork 5
+Homework 5 details can be found inside hw5 folder in src. Please refer to the readme file inside that folder for further information.
+
 ##HomeWork 4
 Homework 4 details can be found inside hw4 folder in src. Please refer to the readme file inside that folder for further information.
 
