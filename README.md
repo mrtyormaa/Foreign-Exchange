@@ -1,4 +1,6 @@
 # Foreign-Exchange
+##HomeWork 6
+Homework 6 details can be found inside scala-random-forest folder. Please refer to the readme file inside that folder for further information.
 
 ##HomeWork 5
 Homework 5 details can be found inside hw5 folder in src. Please refer to the readme file inside that folder for further information.
