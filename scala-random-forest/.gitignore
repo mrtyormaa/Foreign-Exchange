@@ -1,13 +1,6 @@
-*.csv
-*.zip
-*.iml
-*.class
-.idea/
-out/
-.DS_STORE
-
 # Created by .ignore support plugin (hsz.mobi)
 ### Scala template
+*.class
 *.log
 
 # sbt specific
@@ -24,3 +17,4 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
+
