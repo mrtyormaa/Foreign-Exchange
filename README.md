@@ -1,4 +1,7 @@
 # Foreign-Exchange
+## Big Data Finals
+Please visit (this link)[https://github.com/mrtyormaa/pubMed-text-mining/] for the finals.
+
 ##HomeWork 6
 Homework 6 details can be found inside scala-random-forest folder. Please refer to the readme file inside that folder for further information.
 
